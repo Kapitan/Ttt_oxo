@@ -19,7 +19,7 @@ function Ttt(name) {
     if (e.target == table) {
       return;
     }
-    
+    console.log (allCells[5] == e.target);
     if (e.target.innerHTML == ''){
       e.target.innerHTML = now;
       addToarr();
@@ -30,7 +30,10 @@ function Ttt(name) {
     } else if (now ==innerAdd.o) {
       now = innerAdd.x;
     }
-    console.log(arrOfRezults);
+    //console.log(arrOfRezults);
+    if (arrOfRezults.length > 5){
+      testToWin();
+    }
     
   });
   
@@ -38,7 +41,7 @@ function Ttt(name) {
   
   
   
-  console.log(table.querySelectorAll('td'));
+  console.log(allCells[0]);
 }
 
 
