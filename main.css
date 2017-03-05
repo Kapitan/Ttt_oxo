@@ -1,0 +1,10 @@
+#table_div {
+  margin: 0 auto;
+  background-color: #cecece;
+  width: 170px;
+}
+tr td {
+  height: 50px;
+  width: 50px;
+  border: 1px solid #fea;
+}
