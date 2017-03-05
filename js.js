@@ -2,11 +2,18 @@ function Ttt(name) {
   
   var innerAdd = {
     x: '<span>x</span>',
-    o: '<span>o</span>',
-    c: ''
+    o: '<span>o</span>'
   };
   var now = innerAdd.x;
+  var allCells = table.querySelectorAll('td');
+  var arrOfRezults = [];
   
+  function addToarr(){
+    now == innerAdd.x ? arrOfRezults.push('x') : arrOfRezults.push('o');
+  }
+  function testToWin(){
+    
+  }
   
   table.addEventListener('click', function (e) {
     if (e.target == table) {
@@ -15,6 +22,7 @@ function Ttt(name) {
     
     if (e.target.innerHTML == ''){
       e.target.innerHTML = now;
+      addToarr();
     }
     
     if (now == innerAdd.x) {
@@ -22,12 +30,13 @@ function Ttt(name) {
     } else if (now ==innerAdd.o) {
       now = innerAdd.x;
     }
-    console.log(table.querySelectorAll('td'));
+    console.log(arrOfRezults);
+    
   });
   
-  (function checkWin(){
-    
-  })();
+  
+  
+  
   
   console.log(table.querySelectorAll('td'));
 }
