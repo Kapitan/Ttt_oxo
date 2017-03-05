@@ -5,12 +5,17 @@ function Ttt(name) {
     o: '<span>o</span>'
   };
   var now = innerAdd.x;
-  var allCells = table.querySelectorAll('td');
+  var fulCells = {};
+  var allCells = Array.prototype.slice.call(table.querySelectorAll('td'));
   var arrOfRezults = [];
   
   function addToarr(){
     now == innerAdd.x ? arrOfRezults.push('x') : arrOfRezults.push('o');
   }
+  function addToObj(nowIndex) {
+    now == innerAdd.x ? fulCells[nowIndex] = ('x') : fulCells[nowIndex] = ('o');
+  }
+  
   function testToWin(){
     
   }
@@ -19,10 +24,12 @@ function Ttt(name) {
     if (e.target == table) {
       return;
     }
-    console.log (allCells[5] == e.target);
+    //var nowIndex =
+    console.log(allCells.indexOf(e.target));
     if (e.target.innerHTML == ''){
       e.target.innerHTML = now;
       addToarr();
+      addToObj(allCells.indexOf(e.target));
     }
     
     if (now == innerAdd.x) {
@@ -34,7 +41,7 @@ function Ttt(name) {
     if (arrOfRezults.length > 5){
       testToWin();
     }
-    
+    console.log(fulCells);
   });
   
   
