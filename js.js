@@ -18,8 +18,24 @@ function Ttt(name) {
   }
   
   function testToWin(){
-    if (fulCells[0] == 'x' && fulCells[1] == 'x' && fulCells[2] == 'x') {
+    if (fulCells[0] == 'x' && fulCells[1] == 'x' && fulCells[2] == 'x' ||   //1 str
+        fulCells[3] == 'x' && fulCells[4] == 'x' && fulCells[5] == 'x' ||   // 2 str
+        fulCells[6] == 'x' && fulCells[7] == 'x' && fulCells[8] == 'x' ||    //3 str
+        fulCells[0] == 'x' && fulCells[3] == 'x' && fulCells[6] == 'x' ||    // 1 col
+        fulCells[1] == 'x' && fulCells[4] == 'x' && fulCells[7] == 'x' ||// 2 col
+        fulCells[2] == 'x' && fulCells[5] == 'x' && fulCells[8] == 'x' ||// 3col
+        fulCells[0] == 'x' && fulCells[4] == 'x' && fulCells[8] == 'x' ||
+        fulCells[2] == 'x' && fulCells[4] == 'x' && fulCells[6] == 'x') {
       alert('win X');
+    } else if (fulCells[0] == 'o' && fulCells[1] == 'o' && fulCells[2] == 'o' ||   //1 str
+      fulCells[3] == 'o' && fulCells[4] == 'o' && fulCells[5] == 'o' ||   // 2 str
+      fulCells[6] == 'o' && fulCells[7] == 'o' && fulCells[8] == 'o' ||    //3 str
+      fulCells[0] == 'o' && fulCells[3] == 'o' && fulCells[6] == 'o' ||    // 1 col
+      fulCells[1] == 'o' && fulCells[4] == 'o' && fulCells[7] == 'o' ||// 2 col
+      fulCells[2] == 'o' && fulCells[5] == 'o' && fulCells[8] == 'o' ||// 3col
+      fulCells[0] == 'o' && fulCells[4] == 'o' && fulCells[8] == 'o' ||
+      fulCells[2] == 'o' && fulCells[4] == 'o' && fulCells[6] == 'o'){
+      alert('win O');
     }
   }
   
