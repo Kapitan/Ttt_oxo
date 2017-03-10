@@ -1,13 +1,17 @@
 #table_div {
   margin: 0 auto;
-  background-color: #cecece;
+  background-color: #fea;
   width: 332px;
 }
 tr td {
   height: 100px;
   width: 100px;
   border: 3px solid #fea;
+  background-color: #cecece;
   text-align: center;
   font-size: 50px;
+}
+tr td:hover {
+  background-color: #fff;
 }
 

@@ -7,11 +7,6 @@ function Ttt(name) {
   var now = innerAdd.x;
   var fulCells = {};
   var allCells = Array.prototype.slice.call(table.querySelectorAll('td'));
-  var arrOfRezults = [];
-  
-  function addToarr(){
-    now == innerAdd.x ? arrOfRezults.push('x') : arrOfRezults.push('o');
-  }
   
   function addToObj(nowIndex) {
     now == innerAdd.x ? fulCells[nowIndex] = ('x') : fulCells[nowIndex] = ('o');
@@ -36,6 +31,11 @@ function Ttt(name) {
       fulCells[0] == 'o' && fulCells[4] == 'o' && fulCells[8] == 'o' ||
       fulCells[2] == 'o' && fulCells[4] == 'o' && fulCells[6] == 'o'){
       alert('win O');
+    } else {
+      //console.log(Object.keys(fulCells).length == 9);
+      if (Object.keys(fulCells).length == 9){
+        alert('friendship WINS');
+      }
     }
   }
   
@@ -46,16 +46,15 @@ function Ttt(name) {
 
     if (e.target.innerHTML == ''){
       e.target.innerHTML = now;
-      addToarr();
       addToObj(allCells.indexOf(e.target));
+      if (now == innerAdd.x) {
+        now = innerAdd.o;
+      } else if (now ==innerAdd.o) {
+        now = innerAdd.x;
+      }
     }
     
-    if (now == innerAdd.x) {
-      now = innerAdd.o;
-    } else if (now ==innerAdd.o) {
-      now = innerAdd.x;
-    }
-   // console.log(fulCells[0] == 'x', '123');
+    
     if (Object.keys(fulCells).length >= 5){
       testToWin();
     }
