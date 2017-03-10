@@ -12,20 +12,22 @@ function Ttt(name) {
   function addToarr(){
     now == innerAdd.x ? arrOfRezults.push('x') : arrOfRezults.push('o');
   }
+  
   function addToObj(nowIndex) {
     now == innerAdd.x ? fulCells[nowIndex] = ('x') : fulCells[nowIndex] = ('o');
   }
   
   function testToWin(){
-    
+    if (fulCells[0] == 'x' && fulCells[1] == 'x' && fulCells[2] == 'x') {
+      alert('win X');
+    }
   }
   
   table.addEventListener('click', function (e) {
     if (e.target == table) {
       return;
     }
-    //var nowIndex =
-    console.log(allCells.indexOf(e.target));
+
     if (e.target.innerHTML == ''){
       e.target.innerHTML = now;
       addToarr();
@@ -37,18 +39,17 @@ function Ttt(name) {
     } else if (now ==innerAdd.o) {
       now = innerAdd.x;
     }
-    //console.log(arrOfRezults);
-    if (arrOfRezults.length > 5){
+   // console.log(fulCells[0] == 'x', '123');
+    if (Object.keys(fulCells).length >= 5){
       testToWin();
     }
-    console.log(fulCells);
+   
   });
   
   
   
   
-  
-  console.log(allCells[0]);
+
 }
 
 
